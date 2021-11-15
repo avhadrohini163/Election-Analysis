@@ -6,7 +6,7 @@ import os
 file_to_load = os.path.join("Resources", "election_results.csv")
 # Assign a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
-
+total_votes = 0
 # Open the election results and read the file.
 with open(file_to_load) as election_data:
     # To do: read and analyze the data here.
@@ -14,6 +14,13 @@ with open(file_to_load) as election_data:
     # Print the header row.
     headers = next(file_reader)
     print(headers)
+    # Print each row in the CSV file.
+    for row in file_reader:
+        print(row)
+        total_votes += 1
+    # Print the total votes.
+    print(total_votes)
+
 
 
 
